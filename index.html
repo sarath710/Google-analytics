@@ -58,6 +58,22 @@ document.getElementById("x-share").addEventListener("click", function() {
   </a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <!-- End X (Twitter) Share Button -->
+<!-- Facebook Share Button -->
+<a id="fb-share" 
+   href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.netlify.app" 
+   target="_blank">
+   Share on Facebook
+</a>
+
+<script>
+  document.getElementById("fb-share").addEventListener("click", function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'fb_share_clicked'
+    });
+  });
+</script>
+<!-- End Facebook Share Button -->
 
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
@@ -65,5 +81,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
