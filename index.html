@@ -64,22 +64,24 @@ document.getElementById("x-share").addEventListener("click", function() {
 </script>
 <!-- End Facebook Share Button -->
 
-  <!-- LinkedIn Share Button -->
+ <!-- LinkedIn Share Button -->
 <a id="linkedin-share" 
+   class="linkedin-share-button"
    href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.netlify.app/google-ads-service&title=Grow%20Your%20Business%20with%20Google%20Ads&summary=I%20offer%20targeted%20Google%20Ads%20services%20to%20help%20you%20reach%20your%20customers%20faster!&source=LinkedIn" 
    target="_blank">
    Share on LinkedIn
 </a>
 
 <script>
-  document.getElementById("linkedin-share").addEventListener("click", function() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'linkedin_share_clicked'
-    });
+document.getElementById("linkedin-share").addEventListener("click", function() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'linkedin_share_clicked'
   });
+});
 </script>
 <!-- End LinkedIn Share Button -->
+
 
 
   <!-- Google Tag Manager (noscript) -->
@@ -88,4 +90,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
