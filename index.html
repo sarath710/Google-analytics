@@ -41,6 +41,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      data-hashtags="MarketingPractice,GoogleAnalytics" 
      data-show-count="false">
      Post on X
+    <a id="x-share" href="https://twitter.com/intent/tweet?text=Check+out+my+website&url=https://yourwebsite.netlify.app" target="_blank">
+  Share on X
+</a>
+
+<script>
+document.getElementById("x-share").addEventListener("click", function() {
+  // Push a custom event into GTM dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'x_share_clicked'
+  });
+});
+</script>
+
   </a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <!-- End X (Twitter) Share Button -->
@@ -51,4 +65,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
