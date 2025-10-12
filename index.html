@@ -82,6 +82,54 @@ document.getElementById("linkedin-share").addEventListener("click", function() {
 </script>
 <!-- End LinkedIn Share Button -->
 
+<!-- Footer with Newsletter Signup -->
+<footer style="margin-top: 50px; padding: 20px; background-color: #f2f2f2; text-align: center;">
+  <h3>Subscribe to Our Newsletter</h3>
+  <form id="newsletter-form">
+    <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required 
+           style="padding: 8px; width: 250px; border-radius: 5px; border: 1px solid #ccc;">
+    <button type="submit" style="padding: 8px 16px; border: none; background-color: #0073e6; color: white; border-radius: 5px; cursor: pointer;">
+      Subscribe
+    </button>
+  </form>
+  <p id="newsletter-message" style="color: green; margin-top: 10px;"></p>
+
+  <hr style="margin: 20px 0;">
+
+  <!-- Button that goes to separate signup page -->
+  <a href="newsletter.html" id="newsletter-page-btn" 
+     style="display: inline-block; padding: 10px 20px; background-color: #333; color: white; border-radius: 5px; text-decoration: none;">
+     Go to Newsletter Signup Page
+  </a>
+</footer>
+
+<script>
+  // Handle direct form signup
+  document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const email = document.getElementById("newsletter-email").value;
+    
+    // Simulate form submission success
+    document.getElementById("newsletter-message").textContent = "Thank you for subscribing, " + email + "!";
+
+    // Push event to Google Tag Manager
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'newsletter_signup',
+      'signup_location': 'footer',
+      'user_email': email
+    });
+  });
+
+  // Track click on the page button
+  document.getElementById("newsletter-page-btn").addEventListener("click", function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'newsletter_page_button_clicked'
+    });
+  });
+</script>
+
 
 
   <!-- Google Tag Manager (noscript) -->
@@ -90,5 +138,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
