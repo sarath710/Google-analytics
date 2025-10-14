@@ -82,62 +82,61 @@ document.getElementById("linkedin-share").addEventListener("click", function() {
 </script>
 <!-- End LinkedIn Share Button -->
 
-<!-- Footer with Newsletter Signup -->
-<footer style="margin-top: 50px; padding: 20px; background-color: #f2f2f2; text-align: center;">
-  <h3>Subscribe to Our Newsletter</h3>
-  <form id="newsletter-form">
-    <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required 
-           style="padding: 8px; width: 250px; border-radius: 5px; border: 1px solid #ccc;">
-    <button type="submit" style="padding: 8px 16px; border: none; background-color: #0073e6; color: white; border-radius: 5px; cursor: pointer;">
-      Subscribe
-    </button>
-  </form>
-  <p id="newsletter-message" style="color: green; margin-top: 10px;"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; margin: 0; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #333; }
+        input[type="email"] { padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; }
+        button { padding: 10px 20px; border: none; background-color: #0073e6; color: white; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        #message { color: green; margin-top: 15px; }
+    </style>
+</head>
+<body>
 
-  <hr style="margin: 20px 0;">
+    <div class="container">
+        <h1>Join Our Newsletter</h1>
+        <p>Get the latest updates delivered right to your inbox!</p>
+        <form id="signup-form">
+            <input type="email" id="email-input" placeholder="Enter your email address" required>
+            <br>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="message"></p>
+    </div>
 
-  <!-- Button that goes to separate signup page -->
- <a href="newsletter.html" id="newsletter-page-btn" 
-   style="display: inline-block; padding: 10px 20px; background-color: #333; color: white; border-radius: 5px; text-decoration: none;">
-   Go to Newsletter Signup Page
-  </a>
-</footer>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+            const email = document.getElementById("email-input").value;
+            
+            // Display a success message
+            document.getElementById("message").textContent = "Thank you for subscribing, " + email + "!";
+            
+            // You can also add your Google Tag Manager event here if needed
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'newsletter_signup',
+                'signup_location': 'dedicated_page',
+                'user_email': email
+            });
+        });
+    </script>
 
-<script>
-  // Handle direct form signup
-  document.getElementById("newsletter-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const email = document.getElementById("newsletter-email").value;
-    
-    // Simulate form submission success
-    document.getElementById("newsletter-message").textContent = "Thank you for subscribing, " + email + "!";
-
-    // Push event to Google Tag Manager
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'newsletter_signup',
-      'signup_location': 'footer',
-      'user_email': email
-    });
-  });
-
-  // Track click on the page button
-  document.getElementById("newsletter-page-btn").addEventListener("click", function() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'newsletter_page_button_clicked'
-    });
-  });
-</script>
-
-
-
+</body>
+</html>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
