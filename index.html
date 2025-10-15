@@ -82,60 +82,14 @@ document.getElementById("linkedin-share").addEventListener("click", function() {
 </script>
 <!-- End LinkedIn Share Button -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter Signup</title>
-    <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; margin: 0; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
-        h1 { color: #333; }
-        input[type="email"] { padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; }
-        button { padding: 10px 20px; border: none; background-color: #0073e6; color: white; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        #message { color: green; margin-top: 15px; }
-    </style>
-</head>
-<body>
 
-    <div class="container">
-        <h1>Join Our Newsletter</h1>
-        <p>Get the latest updates delivered right to your inbox!</p>
-        <form id="signup-form">
-            <input type="email" id="email-input" placeholder="Enter your email address" required>
-            <br>
-            <button type="submit">Subscribe</button>
-        </form>
-        <p id="message"></p>
-    </div>
-
-    <script>
-        document.getElementById("signup-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from actually submitting
-            const email = document.getElementById("email-input").value;
-            
-            // Display a success message
-            document.getElementById("message").textContent = "Thank you for subscribing, " + email + "!";
-            
-            // You can also add your Google Tag Manager event here if needed
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'newsletter_signup',
-                'signup_location': 'dedicated_page',
-                'user_email': email
-            });
-        });
-    </script>
-
-</body>
-</html>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
