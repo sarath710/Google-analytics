@@ -37,10 +37,34 @@
     input, button {
       padding: 10px;
       margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #00b894;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #019875;
+    }
+    a {
+      color: #00b894;
+      display: block;
+      margin-top: 15px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <h2>Join Our Newsletter</h2>
   <p>Stay updated with marketing tips and project updates.</p>
 
@@ -50,6 +74,8 @@
   </form>
 
   <p id="page-message" style="display:none;">🎉 Thank you for subscribing!</p>
+
+  <a href="index.html">⬅ Back to Home</a>
 
   <script>
     document.getElementById('newsletter-page-form').addEventListener('submit', function(event) {
@@ -64,4 +90,3 @@
   </script>
 </body>
 </html>
-
