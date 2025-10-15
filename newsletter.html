@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Newsletter Signup</title>
+  <meta name="description" content="Sign up for our marketing newsletter and updates.">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NWH39PG');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 40px;
+    }
+    form {
+      background: white;
+      padding: 30px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Join Our Newsletter</h2>
+  <p>Stay updated with marketing tips and project updates.</p>
+
+  <form id="newsletter-page-form">
+    <input type="email" id="newsletter-page-email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <p id="page-message" style="display:none;">🎉 Thank you for subscribing!</p>
+
+  <script>
+    document.getElementById('newsletter-page-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('page-message').style.display = 'block';
+      dataLayer.push({
+        'event': 'newsletter_signup_page',
+        'email': document.getElementById('newsletter-page-email').value
+      });
+      document.getElementById('newsletter-page-email').value = '';
+    });
+  </script>
+</body>
+</html>
 
