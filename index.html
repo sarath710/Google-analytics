@@ -154,38 +154,123 @@ document.getElementById("linkedin-share").addEventListener("click", function() {
   <a href="newsletter.html">Newsletter</a>
 
   <!-- Newsletter Signup Section -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Marketing Practice Site</title>
+  <meta name="description" content="This is my practice site for Google Analytics and Google Ads.">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NWH39PG');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+    }
+    main {
+      padding: 40px 20px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    footer form {
+      margin-top: 15px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00b894;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #019875;
+    }
+    a {
+      color: #00b894;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <h1>Welcome to My Marketing Practice Site!</h1>
+  </header>
+
+  <main>
+    <p>This is my first demo website hosted on GitHub Pages to test Google Analytics & Google Tag Manager.</p>
+    <p><a href="newsletter.html">Go to Newsletter Signup Page</a></p>
+  </main>
+
   <footer>
-    <h3>Join Our Newsletter</h3>
-    <p>Get the latest updates and marketing tips right to your inbox.</p>
-    <form id="newsletter-form">
-      <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+    <h3>Subscribe to our Newsletter</h3>
+    <form id="footer-newsletter-form">
+      <input type="email" id="footer-email" placeholder="Enter your email" required>
       <button type="submit">Sign Up</button>
     </form>
-    <p id="signup-message" style="display:none;">✅ Thanks for subscribing!</p>
+    <p id="footer-message" style="display:none;">✅ Thanks for subscribing!</p>
   </footer>
 
   <script>
-    // Simple form handler + GA event
-    document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const email = document.getElementById('newsletter-email').value;
+    document.getElementById('footer-newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('footer-email').value;
+      document.getElementById('footer-message').style.display = 'block';
+      document.getElementById('footer-email').value = '';
 
-      // Fake success message
-      document.getElementById('signup-message').style.display = 'block';
-
-      // Send event to Google Analytics (via GTM)
+      // Push event to GTM
       dataLayer.push({
-        'event': 'newsletter_signup',
+        'event': 'newsletter_signup_footer',
         'email': email
       });
-
-      // Clear field
-      document.getElementById('newsletter-email').value = '';
     });
   </script>
 </body>
 </html>
-
 
 
   <!-- Google Tag Manager (noscript) -->
@@ -194,6 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
