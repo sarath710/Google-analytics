@@ -81,6 +81,111 @@ document.getElementById("linkedin-share").addEventListener("click", function() {
 });
 </script>
 <!-- End LinkedIn Share Button -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Marketing Practice Site</title>
+  <meta name="description" content="This is my practice site for Google Analytics and Google Ads.">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NWH39PG');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    h1 { margin-top: 30px; }
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWH39PG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <h1>Welcome to My Marketing Practice Site!</h1>
+  <p>This is my demo website where I practice Google Analytics and Tag Manager.</p>
+
+  <a href="about.html">About</a> | 
+  <a href="newsletter.html">Newsletter</a>
+
+  <!-- Newsletter Signup Section -->
+  <footer>
+    <h3>Join Our Newsletter</h3>
+    <p>Get the latest updates and marketing tips right to your inbox.</p>
+    <form id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p id="signup-message" style="display:none;">✅ Thanks for subscribing!</p>
+  </footer>
+
+  <script>
+    // Simple form handler + GA event
+    document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+
+      // Fake success message
+      document.getElementById('signup-message').style.display = 'block';
+
+      // Send event to Google Analytics (via GTM)
+      dataLayer.push({
+        'event': 'newsletter_signup',
+        'email': email
+      });
+
+      // Clear field
+      document.getElementById('newsletter-email').value = '';
+    });
+  </script>
+</body>
+</html>
+
 
 
   <!-- Google Tag Manager (noscript) -->
@@ -89,6 +194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
