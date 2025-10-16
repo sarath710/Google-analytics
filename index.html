@@ -57,6 +57,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- ❌ Removed duplicate GA script that caused the error -->
 </head>
+  <!-- Simple consent banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;
+background:#222;color:#fff;padding:20px;text-align:center;z-index:9999;">
+  <p>This site uses cookies for analytics. Allow cookies?</p>
+  <button onclick="acceptCookies()">Accept</button>
+  <button onclick="declineCookies()">Decline</button>
+</div>
+
+<script>
+function acceptCookies(){
+  setConsent({
+    necessary:true,
+    analytics:true,
+    preferences:true,
+    marketing:true
+  });
+  document.getElementById('cookie-banner').style.display='none';
+}
+
+function declineCookies(){
+  setConsent({
+    necessary:true,
+    analytics:false,
+    preferences:false,
+    marketing:false
+  });
+  document.getElementById('cookie-banner').style.display='none';
+}
+</script>
+
 <body>
   <h1>Welcome to My Marketing Practice Site!</h1>
   <p>This is my first demo website hosted on Netlify.</p>
@@ -313,6 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
