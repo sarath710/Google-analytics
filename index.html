@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+  // --- 1. Initialize the data layer and gtag() ---
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // --- 2. Check for saved consent settings in localStorage ---
+  if (localStorage.getItem('consentMode') === null) {
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'personalization_storage': 'denied',
+      'functionality_storage': 'denied',
+      'security_storage': 'denied',
+    });
+  } else {
+    gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+  }
+
+  // --- 3. Function to set/update user consent ---
+  function setConsent(consent) {
+    const consentMode = {
+      'functionality_storage': consent.necessary ? 'granted' : 'denied',
+      'security_storage': consent.necessary ? 'granted' : 'denied',
+      'ad_storage': consent.marketing ? 'granted' : 'denied',
+      'analytics_storage': consent.analytics ? 'granted' : 'denied',
+      'personalization_storage': consent.preferences ? 'granted' : 'denied',
+    };
+
+    gtag('consent', 'update', consentMode);
+    localStorage.setItem('consentMode', JSON.stringify(consentMode));
+  }
+</script>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBB8RJ6T1H"></script>
 <script>
@@ -280,6 +313,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
 
 
